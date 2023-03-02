@@ -1075,7 +1075,7 @@ var barcode = {
 
 };
 
-module.exports = function (datas, type, settings, callback) {
+var func = function (datas, type, settings, callback) {
     var digit = "",
         hri = "",
         code = "",
@@ -1155,3 +1155,6 @@ module.exports = function (datas, type, settings, callback) {
         return barcode[fname](settings, digit, hri, callback);
     }
 };
+
+func.utils = barcode;
+module.exports = func;
